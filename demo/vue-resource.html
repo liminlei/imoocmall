@@ -16,8 +16,8 @@
   <span>{{msg}}</span>
 </div>
 
-<script src="node_modules/vue/dist/vue.js"></script>
-<script src="node_modules/vue-resource/dist/vue-resource.js"></script>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/vue-resource/dist/vue-resource.js"></script>
 <script>
     var app = new Vue({
         el: "#app",
@@ -36,6 +36,7 @@
         },
         methods: {
             get() {
+                // vue-resource是挂载到vue实例上的，因此可以用this引用
                 this.$http.get("package.json", {
                     params: {
                         userId: "101"
